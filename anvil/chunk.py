@@ -79,7 +79,7 @@ class Chunk:
     def __init__(self, nbt_data: nbt.NBTFile):
         try:
             self.version = nbt_data["DataVersion"].value
-        except KeyError:
+        except:
             # Version is pre-1.9 snapshot 15w32a, so world does not have a Data Version.
             # See https://minecraft.wiki/w/Data_version
             self.version = VERSION_PRE_15w32a
